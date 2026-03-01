@@ -17,7 +17,7 @@ export default function RootLayout({
       <body style={{ backgroundColor: "#FFFFC7" }} className="min-h-screen">
         <div className="flex min-h-screen">
           <Sidebar />
-          <main className="flex-1 p-8 overflow-y-auto">
+          <main className="flex-1 p-8 pt-20 md:pt-8 overflow-y-auto">
             {children}
           </main>
         </div>

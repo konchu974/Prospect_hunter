@@ -113,11 +113,11 @@ export default function CRMPage() {
           {filtered.map((prospect) => (
             <div
               key={prospect.id}
-              className="bg-white rounded-2xl shadow-sm p-5 flex items-center gap-4 transition hover:shadow-md"
+              className="bg-white rounded-2xl shadow-sm p-5 flex flex-col md:flex-row md:items-center gap-4 transition hover:shadow-md"
               style={{ border: "1px solid #FFFFC7" }}
             >
               <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 mb-1">
+                <div className="flex items-center gap-2 mb-1 flex-wrap">
                   <strong className="font-semibold" style={{ color: "#B0413E" }}>
                     {prospect.name}
                   </strong>
@@ -137,7 +137,7 @@ export default function CRMPage() {
                   {prospect.phone && <span>{prospect.phone}</span>}
                   {prospect.website && (
                     
-                    <a href={prospect.website}
+                      <a href={prospect.website}
                       target="_blank"
                       rel="noreferrer"
                       className="underline"
@@ -149,26 +149,28 @@ export default function CRMPage() {
                 </div>
               </div>
 
-              <select
-                value={prospect.status}
-                onChange={(e) => updateStatus(prospect.id, e.target.value)}
-                className="border rounded-xl px-3 py-2 text-sm focus:outline-none"
-                style={{ borderColor: "#FCAA67", color: "#B0413E" }}
-              >
-                <option value="new">Nouveau</option>
-                <option value="contacted">Contacté</option>
-                <option value="interested">Intéressé</option>
-                <option value="won">Client</option>
-                <option value="lost">Perdu</option>
-              </select>
+              <div className="flex items-center gap-2">
+                <select
+                  value={prospect.status}
+                  onChange={(e) => updateStatus(prospect.id, e.target.value)}
+                  className="border rounded-xl px-3 py-2 text-sm focus:outline-none flex-1 md:flex-none"
+                  style={{ borderColor: "#FCAA67", color: "#B0413E" }}
+                >
+                  <option value="new">Nouveau</option>
+                  <option value="contacted">Contacté</option>
+                  <option value="interested">Intéressé</option>
+                  <option value="won">Client</option>
+                  <option value="lost">Perdu</option>
+                </select>
 
-              <button
-                onClick={() => deleteProspect(prospect.id)}
-                className="px-3 py-2 rounded-xl text-sm font-semibold transition"
-                style={{ backgroundColor: "#FFFFC7", color: "#B0413E" }}
-              >
-                Supprimer
-              </button>
+                <button
+                  onClick={() => deleteProspect(prospect.id)}
+                  className="px-3 py-2 rounded-xl text-sm font-semibold transition shrink-0"
+                  style={{ backgroundColor: "#FFFFC7", color: "#B0413E" }}
+                >
+                  Supprimer
+                </button>
+              </div>
             </div>
           ))}
         </div>
