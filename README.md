@@ -54,19 +54,7 @@ CRM de prospection pour freelance web — trouve les entreprises locales sans si
    npm run dev
 ```
 
-## Déploiement Fly.io
-```bash
-fly auth login
-fly launch
-fly volumes create data --size 1
-fly secrets set DATABASE_URL="file:/data/prospect.db"
-fly secrets set GOOGLE_PLACES_API_KEY="votre_cle"
-fly secrets set APP_PASSWORD="votre_mot_de_passe"
-fly secrets set SESSION_SECRET="votre_secret"
-fly deploy
-```
-
 ## APIs utilisées
 
 - **SIRENE** : `recherche-entreprises.api.gouv.fr` 
-- **Google Places (New)** : `places.googleapis.com` 
+- **Google Places (New)** : `places.googleapis.com`
