@@ -58,3 +58,7 @@ CRM de prospection pour freelance web — trouve les entreprises locales sans si
 
 - **SIRENE** : `recherche-entreprises.api.gouv.fr` 
 - **Google Places (New)** : `places.googleapis.com`
+
+  ## License
+
+This project is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0)
